@@ -32,13 +32,6 @@ For example:
 ![Docker version](https://img.shields.io/docker/v/devopsinfra/docker-simple-runner/latest?color=blue&label=Version&logo=docker&style=flat-square)
 ![Image size](https://img.shields.io/docker/image-size/devopsinfra/docker-simple-runner/latest?label=Image%20size&style=flat-square&logo=docker)
 ](https://hub.docker.com/r/devopsinfra/docker-simple-runner "shields.io")
-<br>
-[
-![DockerHub](https://img.shields.io/badge/docker-devopsinfra%2Fdocker--simple--runner:aws--latest-blue.svg?style=flat-square&logo=docker)
-![Docker version](https://img.shields.io/docker/v/devopsinfra/docker-simple-runner/aws-latest?color=blue&label=Version&logo=docker&style=flat-square)
-![Image size](https://img.shields.io/docker/image-size/devopsinfra/docker-simple-runner/aws-latest?label=Image%20size&style=flat-square&logo=docker)
-](https://hub.docker.com/r/devopsinfra/docker-simple-runner "shields.io")
-<!-- ![Docker Pulls](https://img.shields.io/docker/pulls/devopsinfra/docker-simple-runner/aws-latest?color=blue&label=Pulls&logo=docker&style=flat-square) -->
 
 
 # Summary
