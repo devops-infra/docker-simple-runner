@@ -13,7 +13,7 @@ CURRENT_BRANCH := $(shell echo $(GITHUB_REF) | sed 's/refs\/heads\///')
 GITHUB_SHORT_SHA := $(shell echo $(GITHUB_SHA) | cut -c1-7)
 DOCKER_USER_ID := christophshyper
 DOCKER_ORG_NAME := devopsinfra
-DOCKER_IMAGE := docker-terragrunt
+DOCKER_IMAGE := docker-simple-runner
 DOCKER_NAME := $(DOCKER_ORG_NAME)/$(DOCKER_IMAGE)
 BUILD_DATE := $(shell date -u +"%Y-%m-%dT%H:%M:%SZ")
 
