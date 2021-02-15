@@ -1,0 +1,7 @@
+# Exclude
+*
+
+# Include
+!LICENSE
+!README.md
+!show-versions.sh
