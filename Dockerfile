@@ -1,21 +1,21 @@
-FROM alpine:3.13
+FROM alpine:3.14
 
 # Install prerequisits
 SHELL ["/bin/sh", "-euxo", "pipefail", "-c"]
 RUN apk update --no-cache ;\
   apk add --no-cache \
-    bash \
-    docker \
-    make \
-    ncurses \
-    python3 \
-    py3-pip
+    bash~=5.1.4 \
+    docker=~=20.10.7 \
+    make~=4.3 \
+    ncurses~=6.2 \
+    python3~=3.9.5 \
+    py3-pip~=20.3.4
 
 # Python packages
 SHELL ["/bin/bash", "-euxo", "pipefail", "-c"]
 RUN pip3 install --no-cache-dir \
-    requests \
-    slack_sdk
+    requests==2.25.1 \
+    slack_sdk==3.7.0
 
 COPY show-versions.sh /usr/bin/
 SHELL ["/bin/bash", "-euxo", "pipefail", "-c"]
