@@ -11,11 +11,12 @@ RUN apk update --no-cache ;\
     python3~=3.9.5 \
     py3-pip~=20.3.4
 
+# List of Python packages
+COPY pip/requirements.txt /tmp/requirements.txt
+
 # Python packages
 SHELL ["/bin/bash", "-euxo", "pipefail", "-c"]
-RUN pip3 install --no-cache-dir \
-    requests==2.25.1 \
-    slack_sdk==3.7.0
+RUN pip3 install --no-cache-dir -r /tmp/requirements.txt
 
 COPY show-versions.sh /usr/bin/
 SHELL ["/bin/bash", "-euxo", "pipefail", "-c"]
