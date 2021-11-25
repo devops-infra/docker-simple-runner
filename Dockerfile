@@ -4,11 +4,11 @@ FROM alpine:3.15.0
 SHELL ["/bin/sh", "-euxo", "pipefail", "-c"]
 RUN apk update --no-cache ;\
   apk add --no-cache \
-    bash~=5.1.4 \
+    bash~=5.1.8 \
     docker=~=20.10.11 \
     make~=4.3 \
-    ncurses~=6.2 \
-    python3~=3.9.5 \
+    ncurses~=6.3 \
+    python3~=3.9.7 \
     py3-pip~=20.3.4
 
 # List of Python packages
