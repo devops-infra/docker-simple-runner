@@ -5,7 +5,7 @@ SHELL ["/bin/sh", "-euxo", "pipefail", "-c"]
 RUN apk update --no-cache ;\
   apk add --no-cache \
     bash~=5.1.16 \
-    docker=~=20.10.14 \
+    docker=~=20.10.16 \
     make~=4.3 \
     ncurses~=6.3 \
     python3~=3.9.7 \
