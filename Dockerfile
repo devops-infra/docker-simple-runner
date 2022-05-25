@@ -8,8 +8,8 @@ RUN apk update --no-cache ;\
     docker=~=20.10.16 \
     make~=4.3 \
     ncurses~=6.3 \
-    python3~=3.9.7 \
-    py3-pip~=20.3.4
+    python3~=3.10.4 \
+    py3-pip~=22.1.1
 
 # List of Python packages
 COPY pip/requirements.txt /tmp/requirements.txt
