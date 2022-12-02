@@ -4,7 +4,7 @@ FROM alpine:3.17.0
 SHELL ["/bin/sh", "-euxo", "pipefail", "-c"]
 RUN apk update --no-cache ;\
   apk add --no-cache \
-    bash~=5.2.9 \
+    bash~=5.2.12 \
     docker=~=20.10.21 \
     make~=4.3 \
     ncurses~=6.3 \
