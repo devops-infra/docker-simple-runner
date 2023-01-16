@@ -1,9 +1,5 @@
 FROM alpine:3.17.1
 
-RUN addgroup --system devops
-RUN adduser --system devops --ingroup devops
-USER devops:devops
-
 # Install prerequisits
 SHELL ["/bin/sh", "-euxo", "pipefail", "-c"]
 RUN apk update --no-cache ;\
