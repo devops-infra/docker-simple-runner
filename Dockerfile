@@ -5,10 +5,10 @@ SHELL ["/bin/sh", "-euxo", "pipefail", "-c"]
 RUN apk update --no-cache ;\
   apk add --no-cache \
     bash~=5.2.15 \
-    docker=~=20.10.21 \
+    docker=~=20.10.24 \
     make~=4.3 \
     ncurses~=6.3 \
-    python3~=3.10.10 \
+    python3~=3.10.11 \
     py3-pip~=22.3.1
 
 # List of Python packages
