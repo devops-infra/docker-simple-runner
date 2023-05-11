@@ -1,15 +1,15 @@
-FROM alpine:3.17.3
+FROM alpine:3.18.0
 
 # Install prerequisits
 SHELL ["/bin/sh", "-euxo", "pipefail", "-c"]
 RUN apk update --no-cache ;\
   apk add --no-cache \
     bash~=5.2.15 \
-    docker=~=20.10.24 \
-    make~=4.3 \
-    ncurses~=6.3 \
-    python3~=3.10.11 \
-    py3-pip~=22.3.1
+    docker=~=23.0.6 \
+    make~=4.4 \
+    ncurses~=6.4 \
+    python3~=3.11.3 \
+    py3-pip~=23.1.2
 
 # List of Python packages
 COPY pip/requirements.txt /tmp/requirements.txt
