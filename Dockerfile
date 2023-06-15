@@ -8,7 +8,7 @@ RUN apk update --no-cache ;\
     docker=~=23.0.6 \
     make~=4.4 \
     ncurses~=6.4 \
-    python3~=3.11.3 \
+    python3~=3.11.4 \
     py3-pip~=23.1.2
 
 # List of Python packages
