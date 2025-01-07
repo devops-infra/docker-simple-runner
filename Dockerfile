@@ -1,4 +1,4 @@
-FROM alpine:3.20.3
+FROM alpine:3.21.1
 
 # Install prerequisits
 SHELL ["/bin/sh", "-euxo", "pipefail", "-c"]
