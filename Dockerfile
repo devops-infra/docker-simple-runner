@@ -5,11 +5,11 @@ SHELL ["/bin/sh", "-euxo", "pipefail", "-c"]
 RUN apk update --no-cache ;\
   apk add --no-cache \
     bash~=5.2 \
-    docker=~=27.3 \
+    docker=~=28.2 \
     make~=4.4 \
     ncurses~=6.5 \
     python3~=3.12 \
-    py3-pip~=24.3
+    py3-pip~=25.1
 
 # List of Python packages
 COPY pip/requirements.txt /tmp/requirements.txt
