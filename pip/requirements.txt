@@ -1,2 +1,2 @@
-requests==2.32.3
+requests==2.32.4
 slack_sdk==3.35.0
