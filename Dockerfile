@@ -1,11 +1,11 @@
-FROM alpine:3.22.2
+FROM alpine:3.23.0
 
 # Install prerequisits
 SHELL ["/bin/sh", "-euxo", "pipefail", "-c"]
 RUN apk update --no-cache ;\
   apk add --no-cache \
-    bash~=5.2 \
-    docker=~=28.3 \
+    bash~=5.3 \
+    docker=~=29.1 \
     make~=4.4 \
     ncurses~=6.5 \
     python3~=3.12 \
@@ -22,7 +22,7 @@ COPY show-versions.sh /usr/bin/
 SHELL ["/bin/bash", "-euxo", "pipefail", "-c"]
 RUN chmod +x \
     /usr/bin/show-versions.sh ;\
-  # Cleanup
+  # Cleanup \
   rm -rf /var/cache/* ;\
   rm -rf /root/.cache/* ;\
   rm -rf /tmp/*
