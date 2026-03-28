@@ -79,7 +79,7 @@ tasks:
     desc: Get pull request template
     cmds:
       - mkdir -p .tmp
-      - curl -LsS https://raw.githubusercontent.com/devops-infra/.github/master/PULL_REQUEST_TEMPLATE.md -o .tmp/PULL_REQUEST_TEMPLATE.md
+      - curl -LsS https://raw.githubusercontent.com/devops-infra/.github/refs/tags/v1/PULL_REQUEST_TEMPLATE.md -o .tmp/PULL_REQUEST_TEMPLATE.md
 
   git:set-config:
     desc: Set git user config
@@ -98,6 +98,10 @@ tasks:
       - |
         if [ -z "{{.VERSION}}" ]; then
           echo "❌ ERROR: VERSION is empty"
+          exit 1
+        fi
+        if ! echo "{{.VERSION}}" | grep -Eq '^v?[0-9]+\.[0-9]+\.[0-9]+$'; then
+          echo "❌ ERROR: VERSION '{{.VERSION}}' is not a valid semantic version (expected vX.Y.Z or X.Y.Z)"
           exit 1
         fi
   version:update:patch:
@@ -186,4 +190,3 @@ tasks:
             echo "ℹ️ INFO: Major tag '$MAJOR' already up-to-date"
           fi
         fi
-
