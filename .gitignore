@@ -1,6 +1,12 @@
 # Intellij
-.idea/
+/.idea/
 *.iml
 
 # Custom
+.DS_Store
 .tmp/
+.venv
+.venv/
+.envrc
+.env
+.tmp

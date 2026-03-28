@@ -16,6 +16,7 @@ updates:
     labels:
       - automatic
 
+
   # Enable version updates for pip
   - package-ecosystem: "pip"
     directory: "/"
