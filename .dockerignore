@@ -2,7 +2,6 @@
 *
 
 # Include
+!Dockerfile
 !LICENSE
 !README.md
-!show-versions.sh
-!pip

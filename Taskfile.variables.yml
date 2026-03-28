@@ -38,7 +38,12 @@ vars:
       if [ -n "$override" ]; then
         echo "$override"
       else
-        git tag --sort=-v:refname 2>/dev/null | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | head -1
+        latest_tag="$(git tag --sort=-v:refname 2>/dev/null | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | head -1)"
+        if [ -n "$latest_tag" ]; then
+          echo "$latest_tag"
+        else
+          echo "v0.0.0"
+        fi
       fi
   VERSION_NO_V:
     sh: v="{{.VERSION}}"; echo "${v#v}"
@@ -57,4 +62,3 @@ vars:
     sh: echo $(( {{.MINOR}} + 1 ))
   NEXT_MAJOR:
     sh: echo $(( {{.MAJOR}} + 1 ))
-
