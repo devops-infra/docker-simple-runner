@@ -38,6 +38,8 @@ For example:
 <i>To be done</i>
 
 
+
+
 # Usage
 <i>To be done</i>
 
@@ -56,3 +58,32 @@ For example:
 | python3   | Binary         | For running more complex scripts during deployment process.                                                              | https://www.python.org/                            |
 | requests  | Python library | For sending HTTP requests, for example integration with Slack                                                            | https://github.com/psf/requests                    |
 | slack_sdk | Python library | For integration with Slack applications/bots, e.g. creating channels for notifications                                   | https://github.com/slackapi/python-slack-sdk       |
+
+## Forking
+To publish images from a fork, set these variables so Task uses your registry identities:
+`DOCKER_USERNAME`, `DOCKER_ORG_NAME`, `GITHUB_USERNAME`, `GITHUB_ORG_NAME`.
+
+Two supported options (environment variables take precedence over `.env`):
+```bash
+# .env (local only, not committed)
+DOCKER_USERNAME=your-dockerhub-user
+DOCKER_ORG_NAME=your-dockerhub-org
+GITHUB_USERNAME=your-github-user
+GITHUB_ORG_NAME=your-github-org
+```
+
+```bash
+# Shell override
+DOCKER_USERNAME=your-dockerhub-user \
+DOCKER_ORG_NAME=your-dockerhub-org \
+GITHUB_USERNAME=your-github-user \
+GITHUB_ORG_NAME=your-github-org \
+task docker:build
+```
+
+Recommended setup:
+- Local development: use a `.env` file.
+- GitHub Actions: set repo variables for the four values above, and secrets for `DOCKER_TOKEN` and `GITHUB_TOKEN`.
+
+Publish images without a release:
+- Run the `(Manual) Update Version` workflow with `build_only: true` to build and push images without tagging a release.
