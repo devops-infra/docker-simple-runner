@@ -2,8 +2,9 @@
 *
 
 # Include
+!alpine-packages.txt
 !Dockerfile
 !LICENSE
 !README.md
-!show-versions.sh
+!entrypoint.sh
 !pip

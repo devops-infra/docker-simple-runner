@@ -1,28 +1,16 @@
 FROM alpine:3.23.3
 
+# Copy all needed files
+COPY pip/requirements.txt /tmp/requirements.txt
+COPY alpine-packages.txt /tmp/alpine-packages.txt
+COPY entrypoint.sh /usr/bin/
+
 # Install prerequisits
 SHELL ["/bin/sh", "-euxo", "pipefail", "-c"]
 RUN apk update --no-cache ;\
-  apk add --no-cache \
-    bash~=5.3 \
-    docker=~=29.1 \
-    make~=4.4 \
-    ncurses~=6.5 \
-    python3~=3.12 \
-    py3-pip~=25.1
-
-# List of Python packages
-COPY pip/requirements.txt /tmp/requirements.txt
-
-# Python packages
-SHELL ["/bin/bash", "-euxo", "pipefail", "-c"]
-RUN pip3 install --break-system-packages --no-cache-dir -r /tmp/requirements.txt
-
-COPY show-versions.sh /usr/bin/
-SHELL ["/bin/bash", "-euxo", "pipefail", "-c"]
-RUN chmod +x \
-    /usr/bin/show-versions.sh ;\
-  # Cleanup \
+  xargs -r apk add --no-cache < /tmp/alpine-packages.txt ;\
+  pip3 install --break-system-packages --no-cache-dir -r /tmp/requirements.txt ;\
+  chmod +x /usr/bin/entrypoint.sh ;\
   rm -rf /var/cache/* ;\
   rm -rf /root/.cache/* ;\
   rm -rf /tmp/*
@@ -64,4 +52,4 @@ LABEL \
   repository="${REPO_URL}"
 
 WORKDIR /data
-CMD ["show-versions.sh"]
+CMD ["entrypoint.sh"]
