@@ -1,4 +1,4 @@
-FROM alpine:3.23.3
+FROM alpine:3.23.4
 
 # Copy all needed files
 COPY pip/requirements.txt /tmp/requirements.txt
