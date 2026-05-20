@@ -1,1 +1,4 @@
 bash~=5.3
+curl
+python3
+py3-pip
