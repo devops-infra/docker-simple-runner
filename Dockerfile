@@ -6,7 +6,7 @@ COPY alpine-packages.txt /tmp/alpine-packages.txt
 COPY entrypoint.sh /usr/bin/
 
 # Install prerequisits
-SHELL ["/bin/sh", "-euxo", "pipefail", "-c"]
+SHELL ["/bin/ash", "-euxo", "pipefail", "-c"]
 RUN apk update --no-cache ;\
   xargs -r apk add --no-cache < /tmp/alpine-packages.txt ;\
   pip3 install --break-system-packages --no-cache-dir -r /tmp/requirements.txt ;\
