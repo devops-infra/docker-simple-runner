@@ -1,4 +1,4 @@
 bash~=5.3
-curl~=8.21
+curl~=8.22
 python3~=3.14
 py3-pip~=26.1
